@@ -36,10 +36,11 @@ public class GiveMeCat extends HttpServlet {
 		builder.append(htmlSetting);
 		builder.append("<input type=\"button\" value=\"뒤로 가기\" onclick=\"history.back(-1);\">");
 		for(String v : imgList) {
-			builder.append("<p><img width=\"240px\" src=\"");
+			builder.append("<p><img width=\"240px\" onerror=\"this.style.display='none'\" src=\"");
 			builder.append(v);
 			builder.append("\"></p>");
 		}
+		builder.append("<input type=\"button\" value=\"뒤로 가기\" onclick=\"history.back(-1);\">");
 		builder.append("</body>");
 		out.println(builder.toString());
 	}
